@@ -1,0 +1,154 @@
+[
+  {
+    "id": "sub-callai-one",
+    "name": "Sub Callai One",
+    "websiteUrl": "https://sub.callai.one/",
+    "apiBaseUrl": "https://sub.callai.one/v1",
+    "pricingUrl": "https://sub.callai.one/partner-api/v1/status",
+    "pricingEndpointUrl": "https://sub.callai.one/partner-api/v1/status",
+    "collectorKind": "sub2api_partner_status",
+    "partnerTokenEnv": "CALLAI_PARTNER_PRICEAI_TOKEN",
+    "autoPublish": true,
+    "groupAliases": {
+      "claude-kiro": "kiro"
+    },
+    "channelTypes": ["undisclosed"],
+    "accountPools": ["kiro", "max", "pro"],
+    "summary": "站长提供 partner API，公开返回 Claude / GPT 分组倍率和最近一次可用性监测；PriceAI 会保留原始快照并继续用长期样本验证稳定性。"
+  },
+  {
+    "id": "sudocode-chat",
+    "name": "SudoCode",
+    "websiteUrl": "https://sudocode.chat/",
+    "apiBaseUrl": "https://sudocode.chat/v1",
+    "pricingUrl": "https://sudocode.chat/#model-pricing",
+    "pricingEndpointUrl": "https://sudocode.chat/api/pricing",
+    "collectorKind": "new_api_pricing",
+    "channelTypes": ["undisclosed"],
+    "accountPools": ["undisclosed"],
+    "summary": "公开 New API 价格接口可读取，已进入 PriceAI API 中转站自动价格采集池；稳定性和真实扣费仍需测试 Key 或人工样本补充。"
+  },
+  {
+    "id": "packyapi-com",
+    "name": "PackyAPI",
+    "websiteUrl": "https://www.packyapi.com/",
+    "apiBaseUrl": "https://www.packyapi.com/v1",
+    "pricingUrl": "https://www.packyapi.com/pricing",
+    "pricingEndpointUrl": "https://www.packyapi.com/api/pricing",
+    "collectorKind": "new_api_pricing",
+    "channelTypes": ["undisclosed"],
+    "accountPools": ["undisclosed"],
+    "summary": "公开 New API 价格接口可读取，已进入 PriceAI API 中转站自动价格采集池；稳定性和真实扣费仍需测试 Key 或人工样本补充。"
+  },
+  {
+    "id": "9527code-com",
+    "name": "9527Code",
+    "websiteUrl": "https://9527code.com/",
+    "apiBaseUrl": "https://9527code.com/v1",
+    "pricingUrl": "https://9527code.com/pricing",
+    "pricingEndpointUrl": "https://9527code.com/api/pricing",
+    "collectorKind": "new_api_pricing",
+    "channelTypes": ["undisclosed"],
+    "accountPools": ["undisclosed"],
+    "summary": "公开 New API 价格接口可读取，已进入 PriceAI API 中转站自动价格采集池；稳定性和真实扣费仍需测试 Key 或人工样本补充。"
+  },
+  {
+    "id": "kksj-org",
+    "name": "KK API",
+    "websiteUrl": "https://api.kksj.org/",
+    "apiBaseUrl": "https://api.kksj.org/v1",
+    "pricingUrl": "https://api.kksj.org/pricing",
+    "pricingEndpointUrl": "https://api.kksj.org/api/pricing",
+    "collectorKind": "new_api_pricing"
+  },
+  {
+    "id": "smartaipro-cn",
+    "name": "Smartaipro",
+    "websiteUrl": "https://fast.smartaipro.cn/",
+    "apiBaseUrl": "https://fast.smartaipro.cn/v1",
+    "pricingUrl": "https://fast.smartaipro.cn/pricing",
+    "pricingEndpointUrl": "https://fast.smartaipro.cn/api/pricing",
+    "collectorKind": "new_api_pricing"
+  },
+  {
+    "id": "8yes-cc",
+    "name": "8Yes API",
+    "websiteUrl": "https://8yes.cc/",
+    "apiBaseUrl": "https://8yes.cc/v1",
+    "pricingUrl": "https://8yes.cc/pricing",
+    "pricingEndpointUrl": "https://8yes.cc/api/pricing",
+    "collectorKind": "new_api_pricing"
+  },
+  {
+    "id": "4router-net",
+    "name": "4Router",
+    "websiteUrl": "https://4router.net/",
+    "apiBaseUrl": "https://4router.net/v1",
+    "pricingUrl": "https://4router.net/pricing",
+    "pricingEndpointUrl": "https://4router.net/api/pricing",
+    "collectorKind": "new_api_pricing"
+  },
+  {
+    "id": "88996-cloud",
+    "name": "88996 Cloud",
+    "websiteUrl": "https://88996.cloud/",
+    "apiBaseUrl": "https://88996.cloud/v1",
+    "pricingUrl": "https://88996.cloud/pricing",
+    "pricingEndpointUrl": "https://88996.cloud/api/pricing",
+    "collectorKind": "new_api_pricing_v2"
+  },
+  {
+    "id": "180txt-cn",
+    "name": "180txt API",
+    "websiteUrl": "https://www.180txt.cn/",
+    "apiBaseUrl": "https://www.180txt.cn/v1",
+    "pricingUrl": "https://www.180txt.cn/pricing",
+    "pricingEndpointUrl": "https://www.180txt.cn/api/pricing",
+    "collectorKind": "new_api_pricing"
+  },
+  {
+    "id": "micuapi-ai",
+    "name": "MiCu API",
+    "websiteUrl": "https://www.micuapi.ai/",
+    "apiBaseUrl": "https://www.micuapi.ai/v1",
+    "pricingUrl": "https://www.micuapi.ai/pricing",
+    "pricingEndpointUrl": "https://www.micuapi.ai/api/pricing",
+    "collectorKind": "new_api_pricing"
+  },
+  {
+    "id": "franklybuilds-api",
+    "name": "FranklyBuilds中转站",
+    "websiteUrl": "https://api.franklybuilds.com/",
+    "apiBaseUrl": "https://api.franklybuilds.com/v1",
+    "pricingUrl": "https://api.franklybuilds.com/pricing",
+    "pricingEndpointUrl": "https://api.franklybuilds.com/api/pricing",
+    "collectorKind": "new_api_pricing",
+    "channelTypes": ["first_party_pool", "reseller", "mixed"],
+    "accountPools": ["mixed", "undisclosed"],
+    "summary": "站长通过 PriceAI 表单提交，公开 New API 价格接口可读取；渠道包含自建号池、二级分销和混合渠道，需继续接入测试 Key 做可用性监测。"
+  },
+  {
+    "id": "longshang-pro",
+    "name": "LONGSHANG 龍殤",
+    "websiteUrl": "https://longshang.pro/",
+    "apiBaseUrl": "https://api.longshang.pro/v1",
+    "pricingUrl": "https://longshang.pro/pricing",
+    "pricingEndpointUrl": "https://api.longshang.pro/api/pricing",
+    "collectorKind": "new_api_pricing",
+    "channelTypes": ["first_party_pool", "reseller", "mixed"],
+    "accountPools": ["pro", "plus", "team", "mixed"],
+    "summary": "站长提交，公开 New API 价格接口可读取；提交说明包含低价、普通、高级渠道分组倍率，需继续用测试 Key 校验可用性和换算口径。"
+  },
+  {
+    "id": "api-aifoxspa-com",
+    "name": "aifox",
+    "websiteUrl": "https://api.aifoxspa.com/",
+    "apiBaseUrl": "https://api.aifoxspa.com/v1",
+    "pricingUrl": "https://pay.ldxp.cn/item/bvajcj",
+    "pricingEndpointUrl": "https://api.aifoxspa.com/api/pricing",
+    "collectorKind": "new_api_pricing",
+    "channelTypes": ["undisclosed"],
+    "accountPools": ["plus"],
+    "summary": "站长提交，公开 New API 价格接口可读取；提交说明包含 GPT Plus 0.30x 和 0.5R=1$ 口径，需继续用测试 Key 校验可用性。"
+  }
+]

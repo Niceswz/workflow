@@ -1,0 +1,142 @@
+[
+  {
+    "appSlug": "chatgpt",
+    "planSlug": "go-monthly",
+    "label": "ChatGPT Go",
+    "billingPeriod": "monthly",
+    "include": ["ChatGPT Go"],
+    "exclude": ["Annual", "Year", "Credits", "Plus", "Pro"],
+    "preferPriceBandUsd": [4, 15],
+    "sortOrder": 10
+  },
+  {
+    "appSlug": "chatgpt",
+    "planSlug": "plus-monthly",
+    "label": "ChatGPT Plus",
+    "billingPeriod": "monthly",
+    "include": ["ChatGPT Plus"],
+    "exclude": ["Annual", "Year", "Credits", "Pro", "20x", "5x"],
+    "preferPriceBandUsd": [8, 35],
+    "sortOrder": 20
+  },
+  {
+    "appSlug": "chatgpt",
+    "planSlug": "pro-5x",
+    "label": "ChatGPT Pro 5x",
+    "billingPeriod": "monthly",
+    "include": ["ChatGPT Pro 5x"],
+    "exclude": ["Annual", "Year", "Credits", "20x"],
+    "preferPriceBandUsd": [75, 140],
+    "sortOrder": 30
+  },
+  {
+    "appSlug": "chatgpt",
+    "planSlug": "pro-20x",
+    "label": "ChatGPT Pro 20x",
+    "billingPeriod": "monthly",
+    "include": ["ChatGPT Pro 20x"],
+    "exclude": ["Annual", "Year", "Credits"],
+    "preferPriceBandUsd": [150, 260],
+    "sortOrder": 40
+  },
+  {
+    "appSlug": "claude",
+    "planSlug": "pro-monthly",
+    "label": "Claude Pro",
+    "billingPeriod": "monthly",
+    "include": ["Claude Pro", "Monthly"],
+    "exclude": ["Annual", "Year", "Max"],
+    "preferPriceBandUsd": [15, 35],
+    "sortOrder": 10
+  },
+  {
+    "appSlug": "claude",
+    "planSlug": "max-5x-monthly",
+    "label": "Claude Max 5x",
+    "billingPeriod": "monthly",
+    "include": ["Claude Max 5x", "Monthly"],
+    "exclude": ["Annual", "Year", "20x"],
+    "preferPriceBandUsd": [90, 160],
+    "sortOrder": 20
+  },
+  {
+    "appSlug": "claude",
+    "planSlug": "max-20x-monthly",
+    "label": "Claude Max 20x",
+    "billingPeriod": "monthly",
+    "include": ["Claude Max 20x", "Monthly"],
+    "exclude": ["Annual", "Year"],
+    "preferPriceBandUsd": [180, 320],
+    "sortOrder": 30
+  },
+  {
+    "appSlug": "claude",
+    "planSlug": "pro-annual",
+    "label": "Claude Pro Annual",
+    "billingPeriod": "annual",
+    "include": ["Claude Pro", "Annual"],
+    "exclude": ["Max"],
+    "preferPriceBandUsd": [160, 260],
+    "sortOrder": 40
+  },
+  {
+    "appSlug": "gemini",
+    "planSlug": "ai-plus",
+    "label": "Google AI Plus",
+    "billingPeriod": "monthly",
+    "include": ["Google AI Plus"],
+    "exclude": ["Annual", "Year", "Pro", "Ultra", "100 GB", "2 TB"],
+    "preferPriceBandUsd": [4, 15],
+    "sortOrder": 10
+  },
+  {
+    "appSlug": "gemini",
+    "planSlug": "ai-pro",
+    "label": "Google AI Pro",
+    "billingPeriod": "monthly",
+    "include": ["Google AI Pro"],
+    "exclude": ["Annual", "Year", "Ultra", "Plus", "100 GB", "2 TB"],
+    "preferPriceBandUsd": [15, 35],
+    "sortOrder": 20
+  },
+  {
+    "appSlug": "gemini",
+    "planSlug": "ai-ultra",
+    "label": "Google AI Ultra",
+    "billingPeriod": "monthly",
+    "include": ["Google AI Ultra"],
+    "exclude": ["Annual", "Year", "Plus", "Pro"],
+    "preferPriceBandUsd": [150, 260],
+    "sortOrder": 30
+  },
+  {
+    "appSlug": "grok",
+    "planSlug": "supergrok-lite",
+    "label": "SuperGrok Lite",
+    "billingPeriod": "monthly",
+    "include": ["SuperGrok Lite"],
+    "exclude": ["Annual", "Year", "Heavy"],
+    "preferPriceBandUsd": [5, 20],
+    "sortOrder": 10
+  },
+  {
+    "appSlug": "grok",
+    "planSlug": "supergrok",
+    "label": "SuperGrok",
+    "billingPeriod": "monthly",
+    "include": ["SuperGrok"],
+    "exclude": ["Annual", "Year", "Lite", "Heavy"],
+    "preferPriceBandUsd": [20, 45],
+    "sortOrder": 20
+  },
+  {
+    "appSlug": "grok",
+    "planSlug": "supergrok-heavy",
+    "label": "SuperGrok Heavy",
+    "billingPeriod": "monthly",
+    "include": ["SuperGrok Heavy"],
+    "exclude": ["Annual", "Year", "Lite"],
+    "preferPriceBandUsd": [220, 380],
+    "sortOrder": 30
+  }
+]

@@ -1,0 +1,164 @@
+{
+  "kinds": [
+    {
+      "kind": "kami",
+      "label": "Kami",
+      "hosts": [
+        "123456787kelie.top",
+        "acg.nbcode.xyz",
+        "ai666.dnxb.cc",
+        "ai666.id",
+        "aisou.pro",
+        "caowo.store",
+        "douyiner.cn",
+        "faka.redeemai.me",
+        "faka.redeemgpt.com",
+        "feifei.shop",
+        "fk.gptcz.cc",
+        "fk.gptkt.pro",
+        "fk.ybkjs.top",
+        "gemini91.shop",
+        "gmail1888.com",
+        "hiemail.store",
+        "lynnzee.myweb999.cfd",
+        "nikoers.com",
+        "shop.558686.xyz",
+        "shop.bmoplus.com",
+        "shop.gpt365.wiki",
+        "shopcardai.click",
+        "shihuiai.cn",
+        "talkai.cyou",
+        "tehuio.com",
+        "web3chirou.com",
+        "wiki123.top",
+        "yh-mo.xyz",
+        "zhanghao66.com",
+        "zzshu.com"
+      ]
+    },
+    {
+      "kind": "dujiao",
+      "label": "独角数卡",
+      "hosts": [
+        "11.id2323.top",
+        "98-xj.com",
+        "ac-card.org",
+        "burstpro-ai.online",
+        "card.kxandyou.com",
+        "ccdawang.win",
+        "fk.txspvip.xyz",
+        "geekaihub.com",
+        "gmail91.shop",
+        "kapay.shop",
+        "morimm.com",
+        "shop.aitonse.com",
+        "shop.auto-subscribe.com",
+        "shop.mfttai.com",
+        "ultra.makelove.cloud",
+        "zhang520.store"
+      ]
+    },
+    {
+      "kind": "shopApi",
+      "label": "ShopApi",
+      "hosts": [
+        "catfk.com",
+        "ldxp.cn",
+        "pay.ldxp.cn",
+        "pay.qxvx.cn"
+      ]
+    },
+    {
+      "kind": "xiaoheiwan",
+      "label": "小黑万",
+      "hosts": [
+        "upgrade.xiaoheiwan.com"
+      ]
+    },
+    {
+      "kind": "opensoraHtml",
+      "label": "OpenSora HTML",
+      "hosts": [
+        "aifk.opensora.de"
+      ]
+    },
+    {
+      "kind": "makerichHtml",
+      "label": "Makerich HTML",
+      "hosts": [
+        "makerich.club"
+      ]
+    },
+    {
+      "kind": "beibeiHtml",
+      "label": "贝贝 HTML",
+      "hosts": [
+        "bei-bei.shop"
+      ]
+    },
+    {
+      "kind": "ikunloveApi",
+      "label": "IkunLove API",
+      "hosts": [
+        "ikunlove.best"
+      ]
+    },
+    {
+      "kind": "getgptApi",
+      "label": "GetGPT API",
+      "hosts": [
+        "getgpt.pro"
+      ]
+    },
+    {
+      "kind": "publicProductsApi",
+      "label": "公开商品 API",
+      "hosts": [
+        "academicgate.org",
+        "catcard.uk"
+      ]
+    },
+    {
+      "kind": "shopUserProductsApi",
+      "label": "Shop User API",
+      "hosts": [
+        "sd.ncet.top"
+      ]
+    },
+    {
+      "kind": "unicornHtml",
+      "label": "Unicorn HTML",
+      "hosts": [
+        "meowka.vip",
+        "ouvg.top"
+      ]
+    },
+    {
+      "kind": "mooncakeCatalog",
+      "label": "Mooncake Catalog",
+      "hosts": [
+        "fk1.ybkjs.top"
+      ]
+    },
+    {
+      "kind": "blackcatWholesale",
+      "label": "BlackCat 批发",
+      "hosts": [
+        "autopixel.qzz.io"
+      ]
+    },
+    {
+      "kind": "genericHtml",
+      "label": "通用 HTML",
+      "hosts": [
+        "19cm.tech",
+        "lemon-watermelon.com",
+        "of365.vip",
+        "sulanjun.cc",
+        "woaimaihao.com",
+        "xingbao-ai.shop",
+        "xxxyan.cc"
+      ]
+    }
+  ]
+}

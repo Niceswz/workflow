@@ -1,0 +1,241 @@
+[
+  {
+    "stationId": "kksj-org",
+    "apiBaseUrl": "https://api.kksj.org/v1",
+    "apiKeyEnv": "API_TRANSIT_KKSJ_ORG_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true
+  },
+  {
+    "stationId": "smartaipro-cn",
+    "apiBaseUrl": "https://fast.smartaipro.cn/v1",
+    "apiKeyEnv": "API_TRANSIT_SMARTAIPRO_CN_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true
+  },
+  {
+    "stationId": "8yes-cc",
+    "apiBaseUrl": "https://8yes.cc/v1",
+    "apiKeyEnv": "API_TRANSIT_8YES_CC_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true
+  },
+  {
+    "stationId": "4router-net",
+    "apiBaseUrl": "https://4router.net/v1",
+    "apiKeyEnv": "API_TRANSIT_4ROUTER_NET_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true
+  },
+  {
+    "stationId": "88996-cloud",
+    "apiBaseUrl": "https://88996.cloud/v1",
+    "apiKeyEnv": "API_TRANSIT_88996_CLOUD_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true
+  },
+  {
+    "stationId": "180txt-cn",
+    "apiBaseUrl": "https://www.180txt.cn/v1",
+    "apiKeyEnv": "API_TRANSIT_180TXT_CN_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true
+  },
+  {
+    "stationId": "micuapi-ai",
+    "apiBaseUrl": "https://www.micuapi.ai/v1",
+    "apiKeyEnv": "API_TRANSIT_MICUAPI_AI_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true
+  },
+  {
+    "stationId": "freedomstore-asia",
+    "apiBaseUrl": "https://freedomstore.asia/v1",
+    "apiKeyEnv": "API_TRANSIT_FREEDOMSTORE_ASIA_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true,
+    "targets": [
+      {
+        "family": "gpt",
+        "standardModel": "GPT 5.5",
+        "candidates": ["gpt-5.5"],
+        "keywords": ["gpt", "5.5"]
+      },
+      {
+        "family": "gpt",
+        "standardModel": "GPT 5.4",
+        "candidates": ["gpt-5.4"],
+        "keywords": ["gpt", "5.4"]
+      }
+    ]
+  },
+  {
+    "profileId": "apinode-ltd-gpt",
+    "stationId": "apinode-ltd",
+    "apiBaseUrl": "https://apinode.ltd/v1",
+    "apiKeyEnv": "API_TRANSIT_APINODE_LTD_GPT_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true,
+    "targetLimit": 1,
+    "targetPriority": "latest_highest_available",
+    "targets": [
+      {
+        "family": "gpt",
+        "standardModel": "GPT 5.4",
+        "candidates": ["gpt-5.4"],
+        "keywords": ["gpt", "5.4"]
+      },
+      {
+        "family": "gpt",
+        "standardModel": "GPT 5.5",
+        "candidates": ["gpt-5.5"],
+        "keywords": ["gpt", "5.5"]
+      }
+    ]
+  },
+  {
+    "profileId": "apinode-ltd-claude",
+    "stationId": "apinode-ltd",
+    "apiBaseUrl": "https://apinode.ltd/v1",
+    "apiKeyEnv": "API_TRANSIT_APINODE_LTD_CLAUDE_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true,
+    "targetLimit": 1,
+    "targets": [
+      {
+        "family": "claude",
+        "standardModel": "Claude Opus 4.8",
+        "candidates": ["claude-opus-4-8", "claude-opus-4.8"],
+        "keywords": ["claude", "opus", "4.8"]
+      }
+    ]
+  },
+  {
+    "profileId": "wawazz-xyz-gpt",
+    "stationId": "wawazz-xyz",
+    "apiBaseUrl": "https://wawazz.xyz/v1",
+    "apiKeyEnv": "API_TRANSIT_WAWAZZ_XYZ_GPT_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true,
+    "targetLimit": 1,
+    "targetPriority": "latest_highest_available",
+    "targets": [
+      {
+        "family": "gpt",
+        "standardModel": "GPT 5.4",
+        "candidates": ["gpt-5.4"],
+        "keywords": ["gpt", "5.4"]
+      },
+      {
+        "family": "gpt",
+        "standardModel": "GPT 5.5",
+        "candidates": ["gpt-5.5"],
+        "keywords": ["gpt", "5.5"]
+      }
+    ]
+  },
+  {
+    "profileId": "wawazz-xyz-claude",
+    "stationId": "wawazz-xyz",
+    "apiBaseUrl": "https://wawazz.xyz/v1",
+    "apiKeyEnv": "API_TRANSIT_WAWAZZ_XYZ_CLAUDE_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true,
+    "targetLimit": 1,
+    "targetPriority": "latest_highest_available",
+    "targets": [
+      {
+        "family": "claude",
+        "standardModel": "Claude Sonnet 4.6",
+        "candidates": ["claude-sonnet-4-6", "claude-sonnet-4.6"],
+        "keywords": ["claude", "sonnet", "4.6"]
+      },
+      {
+        "family": "claude",
+        "standardModel": "Claude Opus 4.6",
+        "candidates": ["claude-opus-4-6", "claude-opus-4.6"],
+        "keywords": ["claude", "opus", "4.6"]
+      },
+      {
+        "family": "claude",
+        "standardModel": "Claude Opus 4.7",
+        "candidates": ["claude-opus-4-7", "claude-opus-4.7"],
+        "keywords": ["claude", "opus", "4.7"]
+      },
+      {
+        "family": "claude",
+        "standardModel": "Claude Opus 4.8",
+        "candidates": ["claude-opus-4-8", "claude-opus-4.8"],
+        "keywords": ["claude", "opus", "4.8"]
+      }
+    ]
+  },
+  {
+    "profileId": "sub-callai-one-gpt-pro",
+    "stationId": "sub-callai-one",
+    "apiBaseUrl": "https://sub.callai.one/v1",
+    "apiKeyEnv": "API_TRANSIT_SUB_CALLAI_ONE_GPT_PRO_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true,
+    "groupName": "gpt-pro号池",
+    "targetLimit": 1,
+    "targetPriority": "latest_highest_available",
+    "targets": [
+      {
+        "family": "gpt",
+        "standardModel": "GPT 5.4",
+        "groupName": "gpt-pro号池",
+        "candidates": ["gpt-5.4"],
+        "keywords": ["gpt", "5.4"]
+      },
+      {
+        "family": "gpt",
+        "standardModel": "GPT 5.5",
+        "groupName": "gpt-pro号池",
+        "candidates": ["gpt-5.5"],
+        "keywords": ["gpt", "5.5"]
+      }
+    ]
+  },
+  {
+    "profileId": "sub-callai-one-claude",
+    "stationId": "sub-callai-one",
+    "apiBaseUrl": "https://sub.callai.one/v1",
+    "apiKeyEnv": "API_TRANSIT_SUB_CALLAI_ONE_CLAUDE_KEY",
+    "protocol": "openai_compatible",
+    "enabled": true,
+    "groupName": "kiro",
+    "targetLimit": 1,
+    "targetPriority": "latest_highest_available",
+    "targets": [
+      {
+        "family": "claude",
+        "standardModel": "Claude Sonnet 4.6",
+        "groupName": "kiro",
+        "candidates": ["claude-sonnet-4-6", "claude-sonnet-4.6"],
+        "keywords": ["claude", "sonnet", "4.6"]
+      },
+      {
+        "family": "claude",
+        "standardModel": "Claude Opus 4.6",
+        "groupName": "kiro",
+        "candidates": ["claude-opus-4-6", "claude-opus-4.6"],
+        "keywords": ["claude", "opus", "4.6"]
+      },
+      {
+        "family": "claude",
+        "standardModel": "Claude Opus 4.7",
+        "groupName": "kiro",
+        "candidates": ["claude-opus-4-7", "claude-opus-4.7"],
+        "keywords": ["claude", "opus", "4.7"]
+      },
+      {
+        "family": "claude",
+        "standardModel": "Claude Opus 4.8",
+        "groupName": "kiro",
+        "candidates": ["claude-opus-4-8", "claude-opus-4.8"],
+        "keywords": ["claude", "opus", "4.8"]
+      }
+    ]
+  }
+]

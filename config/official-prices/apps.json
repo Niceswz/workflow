@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "chatgpt",
+    "displayName": "ChatGPT",
+    "provider": "OpenAI",
+    "appStoreId": "6448311069",
+    "appStoreSlug": "chatgpt",
+    "enabled": true,
+    "sortOrder": 10
+  },
+  {
+    "slug": "claude",
+    "displayName": "Claude",
+    "provider": "Anthropic",
+    "appStoreId": "6473753684",
+    "appStoreSlug": "claude-by-anthropic",
+    "enabled": true,
+    "sortOrder": 20
+  },
+  {
+    "slug": "gemini",
+    "displayName": "Gemini",
+    "provider": "Google",
+    "appStoreId": "6477489729",
+    "appStoreSlug": "google-gemini",
+    "enabled": true,
+    "sortOrder": 30
+  },
+  {
+    "slug": "grok",
+    "displayName": "Grok",
+    "provider": "xAI",
+    "appStoreId": "6670324846",
+    "appStoreSlug": "grok",
+    "enabled": true,
+    "sortOrder": 40
+  }
+]

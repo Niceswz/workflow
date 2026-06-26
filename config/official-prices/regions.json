@@ -1,0 +1,378 @@
+[
+  {
+    "countryCode": "US",
+    "countryLabel": "美国",
+    "storefrontCode": "us",
+    "currencyCode": "USD",
+    "enabled": true,
+    "priority": 10
+  },
+  {
+    "countryCode": "TR",
+    "countryLabel": "土耳其",
+    "storefrontCode": "tr",
+    "currencyCode": "TRY",
+    "enabled": true,
+    "priority": 20
+  },
+  {
+    "countryCode": "PH",
+    "countryLabel": "菲律宾",
+    "storefrontCode": "ph",
+    "currencyCode": "PHP",
+    "enabled": true,
+    "priority": 30
+  },
+  {
+    "countryCode": "JP",
+    "countryLabel": "日本",
+    "storefrontCode": "jp",
+    "currencyCode": "JPY",
+    "enabled": true,
+    "priority": 40
+  },
+  {
+    "countryCode": "SG",
+    "countryLabel": "新加坡",
+    "storefrontCode": "sg",
+    "currencyCode": "SGD",
+    "enabled": true,
+    "priority": 50
+  },
+  {
+    "countryCode": "HK",
+    "countryLabel": "香港",
+    "storefrontCode": "hk",
+    "currencyCode": "HKD",
+    "enabled": true,
+    "priority": 60
+  },
+  {
+    "countryCode": "GB",
+    "countryLabel": "英国",
+    "storefrontCode": "gb",
+    "currencyCode": "GBP",
+    "enabled": true,
+    "priority": 70
+  },
+  {
+    "countryCode": "CA",
+    "countryLabel": "加拿大",
+    "storefrontCode": "ca",
+    "currencyCode": "CAD",
+    "enabled": true,
+    "priority": 80
+  },
+  {
+    "countryCode": "AU",
+    "countryLabel": "澳大利亚",
+    "storefrontCode": "au",
+    "currencyCode": "AUD",
+    "enabled": true,
+    "priority": 90
+  },
+  {
+    "countryCode": "NZ",
+    "countryLabel": "新西兰",
+    "storefrontCode": "nz",
+    "currencyCode": "NZD",
+    "enabled": true,
+    "priority": 100
+  },
+  {
+    "countryCode": "KR",
+    "countryLabel": "韩国",
+    "storefrontCode": "kr",
+    "currencyCode": "KRW",
+    "enabled": true,
+    "priority": 110
+  },
+  {
+    "countryCode": "IN",
+    "countryLabel": "印度",
+    "storefrontCode": "in",
+    "currencyCode": "INR",
+    "enabled": true,
+    "priority": 120
+  },
+  {
+    "countryCode": "ID",
+    "countryLabel": "印度尼西亚",
+    "storefrontCode": "id",
+    "currencyCode": "IDR",
+    "enabled": true,
+    "priority": 130
+  },
+  {
+    "countryCode": "TH",
+    "countryLabel": "泰国",
+    "storefrontCode": "th",
+    "currencyCode": "THB",
+    "enabled": true,
+    "priority": 140
+  },
+  {
+    "countryCode": "MY",
+    "countryLabel": "马来西亚",
+    "storefrontCode": "my",
+    "currencyCode": "MYR",
+    "enabled": true,
+    "priority": 150
+  },
+  {
+    "countryCode": "BR",
+    "countryLabel": "巴西",
+    "storefrontCode": "br",
+    "currencyCode": "BRL",
+    "enabled": true,
+    "priority": 160
+  },
+  {
+    "countryCode": "MX",
+    "countryLabel": "墨西哥",
+    "storefrontCode": "mx",
+    "currencyCode": "MXN",
+    "enabled": true,
+    "priority": 170
+  },
+  {
+    "countryCode": "ZA",
+    "countryLabel": "南非",
+    "storefrontCode": "za",
+    "currencyCode": "ZAR",
+    "enabled": true,
+    "priority": 180
+  },
+  {
+    "countryCode": "CH",
+    "countryLabel": "瑞士",
+    "storefrontCode": "ch",
+    "currencyCode": "CHF",
+    "enabled": true,
+    "priority": 190
+  },
+  {
+    "countryCode": "SE",
+    "countryLabel": "瑞典",
+    "storefrontCode": "se",
+    "currencyCode": "SEK",
+    "enabled": true,
+    "priority": 200
+  },
+  {
+    "countryCode": "NO",
+    "countryLabel": "挪威",
+    "storefrontCode": "no",
+    "currencyCode": "NOK",
+    "enabled": true,
+    "priority": 210
+  },
+  {
+    "countryCode": "DK",
+    "countryLabel": "丹麦",
+    "storefrontCode": "dk",
+    "currencyCode": "DKK",
+    "enabled": true,
+    "priority": 220
+  },
+  {
+    "countryCode": "PL",
+    "countryLabel": "波兰",
+    "storefrontCode": "pl",
+    "currencyCode": "PLN",
+    "enabled": true,
+    "priority": 230
+  },
+  {
+    "countryCode": "CZ",
+    "countryLabel": "捷克",
+    "storefrontCode": "cz",
+    "currencyCode": "CZK",
+    "enabled": true,
+    "priority": 240
+  },
+  {
+    "countryCode": "HU",
+    "countryLabel": "匈牙利",
+    "storefrontCode": "hu",
+    "currencyCode": "HUF",
+    "enabled": true,
+    "priority": 250
+  },
+  {
+    "countryCode": "RO",
+    "countryLabel": "罗马尼亚",
+    "storefrontCode": "ro",
+    "currencyCode": "RON",
+    "enabled": true,
+    "priority": 260
+  },
+  {
+    "countryCode": "DE",
+    "countryLabel": "德国",
+    "storefrontCode": "de",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 270
+  },
+  {
+    "countryCode": "FR",
+    "countryLabel": "法国",
+    "storefrontCode": "fr",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 280
+  },
+  {
+    "countryCode": "ES",
+    "countryLabel": "西班牙",
+    "storefrontCode": "es",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 290
+  },
+  {
+    "countryCode": "IT",
+    "countryLabel": "意大利",
+    "storefrontCode": "it",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 300
+  },
+  {
+    "countryCode": "NL",
+    "countryLabel": "荷兰",
+    "storefrontCode": "nl",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 310
+  },
+  {
+    "countryCode": "IE",
+    "countryLabel": "爱尔兰",
+    "storefrontCode": "ie",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 320
+  },
+  {
+    "countryCode": "PT",
+    "countryLabel": "葡萄牙",
+    "storefrontCode": "pt",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 330
+  },
+  {
+    "countryCode": "BE",
+    "countryLabel": "比利时",
+    "storefrontCode": "be",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 340
+  },
+  {
+    "countryCode": "AT",
+    "countryLabel": "奥地利",
+    "storefrontCode": "at",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 350
+  },
+  {
+    "countryCode": "FI",
+    "countryLabel": "芬兰",
+    "storefrontCode": "fi",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 360
+  },
+  {
+    "countryCode": "GR",
+    "countryLabel": "希腊",
+    "storefrontCode": "gr",
+    "currencyCode": "EUR",
+    "enabled": true,
+    "priority": 370
+  },
+  {
+    "countryCode": "IL",
+    "countryLabel": "以色列",
+    "storefrontCode": "il",
+    "currencyCode": "ILS",
+    "enabled": true,
+    "priority": 380
+  },
+  {
+    "countryCode": "AR",
+    "countryLabel": "阿根廷",
+    "storefrontCode": "ar",
+    "currencyCode": "USD",
+    "enabled": true,
+    "priority": 390
+  },
+  {
+    "countryCode": "CO",
+    "countryLabel": "哥伦比亚",
+    "storefrontCode": "co",
+    "currencyCode": "COP",
+    "enabled": true,
+    "priority": 400
+  },
+  {
+    "countryCode": "EG",
+    "countryLabel": "埃及",
+    "storefrontCode": "eg",
+    "currencyCode": "EGP",
+    "enabled": true,
+    "priority": 410
+  },
+  {
+    "countryCode": "NG",
+    "countryLabel": "尼日利亚",
+    "storefrontCode": "ng",
+    "currencyCode": "NGN",
+    "enabled": true,
+    "priority": 420
+  },
+  {
+    "countryCode": "PE",
+    "countryLabel": "秘鲁",
+    "storefrontCode": "pe",
+    "currencyCode": "PEN",
+    "enabled": true,
+    "priority": 430
+  },
+  {
+    "countryCode": "PK",
+    "countryLabel": "巴基斯坦",
+    "storefrontCode": "pk",
+    "currencyCode": "PKR",
+    "enabled": true,
+    "priority": 440
+  },
+  {
+    "countryCode": "TW",
+    "countryLabel": "中国台湾",
+    "storefrontCode": "tw",
+    "currencyCode": "TWD",
+    "enabled": true,
+    "priority": 450
+  },
+  {
+    "countryCode": "UA",
+    "countryLabel": "乌克兰",
+    "storefrontCode": "ua",
+    "currencyCode": "USD",
+    "enabled": true,
+    "priority": 460
+  },
+  {
+    "countryCode": "VN",
+    "countryLabel": "越南",
+    "storefrontCode": "vn",
+    "currencyCode": "VND",
+    "enabled": true,
+    "priority": 470
+  }
+]
