@@ -1,0 +1,42 @@
+name: Feature request
+description: 提出新功能、交互优化或采集器需求
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决的问题
+      description: 请从使用场景说明这个需求解决什么问题。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 期望方案
+      description: 你希望 PriceAI 怎么做？
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 影响范围
+      options:
+        - 前台比价
+        - 后台管理
+        - 采集器
+        - 商品分类
+        - 部署/运维
+        - 文档
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 相关来源或参考链接
+      description: 如果是新增渠道或参考产品，请填写链接。
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明
