@@ -15,83 +15,13 @@ on:
         options:
           - fx_only
           - weekly_full
-      run_direct:
-        description: "Run collection directly in GitHub Actions instead of enqueueing a job"
-        required: false
-        default: false
-        type: boolean
 
 concurrency:
   group: collect-official-prices
   cancel-in-progress: false
 
 jobs:
-  enqueue:
-    if: ${{ github.event_name != 'workflow_dispatch' || inputs.run_direct != true }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Enqueue official price job
-        env:
-          COLLECT_PRICES_URL: ${{ secrets.COLLECT_PRICES_URL }}
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
-          REQUESTED_MODE: ${{ github.event.inputs.mode }}
-          SCHEDULE: ${{ github.event.schedule }}
-        run: |
-          set -euo pipefail
-
-          if [ -z "$COLLECT_PRICES_URL" ] || [ -z "$CRON_SECRET" ]; then
-            echo "缺少 COLLECT_PRICES_URL 或 CRON_SECRET secret"
-            exit 1
-          fi
-
-          BASE_URL=$(node <<'NODE'
-          const raw = process.env.COLLECT_PRICES_URL;
-          const url = new URL(raw);
-          url.hash = "";
-          url.search = "";
-          url.pathname = url.pathname.replace(/\/api\/cron\/collect-prices\/?$/, "") || "/";
-          console.log(url.toString().replace(/\/$/, ""));
-          NODE
-          )
-
-          MODE="${REQUESTED_MODE:-fx_only}"
-          if [ "$SCHEDULE" = "30 18 * * 0" ]; then
-            MODE="weekly_full"
-          fi
-
-          curl --fail --silent --show-error \
-            --request POST \
-            --header "Authorization: Bearer $CRON_SECRET" \
-            "$BASE_URL/api/cron/official-prices?mode=$MODE"
-
-      - name: Notify failure
-        if: failure()
-        env:
-          WEBHOOK_URL: ${{ secrets.PRICEAI_ALERT_WEBHOOK_URL }}
-        run: |
-          if [ -z "$WEBHOOK_URL" ]; then
-            exit 0
-          fi
-
-          node <<'NODE'
-          const payload = {
-            title: "PriceAI GitHub Actions 失败",
-            message: `${process.env.GITHUB_WORKFLOW} #${process.env.GITHUB_RUN_NUMBER} failed on ${process.env.GITHUB_REF_NAME}`,
-            severity: "warning",
-            source: "github-actions",
-            runUrl: `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`,
-          };
-
-          await fetch(process.env.WEBHOOK_URL, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-          NODE
-
   direct-collect:
-    if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_direct == true }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -107,13 +37,22 @@ jobs:
       - name: Collect and write official prices
         env:
           REQUESTED_MODE: ${{ github.event.inputs.mode }}
+          SCHEDULE: ${{ github.event.schedule }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           set -euo pipefail
 
-          MODE="${REQUESTED_MODE:-weekly_full}"
+          if [ -z "$NEXT_PUBLIC_SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then
+            echo "缺少 NEXT_PUBLIC_SUPABASE_URL 或 SUPABASE_SERVICE_ROLE_KEY secret"
+            exit 1
+          fi
+
+          MODE="${REQUESTED_MODE:-fx_only}"
+          if [ "$SCHEDULE" = "30 18 * * 0" ]; then
+            MODE="weekly_full"
+          fi
+
           if [ "$MODE" = "fx_only" ]; then
             npm run collect:official -- --fx-only --post --mode=worker
           else
@@ -143,4 +82,3 @@ jobs:
             headers: { "content-type": "application/json" },
             body: JSON.stringify(payload),
           });
-          NODE

@@ -50,17 +50,7 @@ jobs:
             exit 1
           fi
 
-          BASE_URL=$(node <<'NODE'
-          const raw = process.env.COLLECT_PRICES_URL;
-          const url = new URL(raw);
-          url.hash = "";
-          url.search = "";
-          url.pathname = url.pathname.replace(/\/api\/cron\/collect-prices\/?$/, "") || "/";
-          console.log(url.toString().replace(/\/$/, ""));
-          NODE
-          )
-
-          npm run collect:prices -- --all --kind dujiao --concurrency 2 --post --endpoint "$BASE_URL"
+          npm run collect:prices -- --all --kind dujiao --concurrency 2 --post --endpoint "$COLLECT_PRICES_URL"
 
       - name: Notify failure
         if: failure()

@@ -37,27 +37,12 @@ const AUTO_DETECT_COLLECTOR_KINDS = [
   "blackcatWholesale",
   "genericHtml",
 ];
-const BUILTIN_SOURCES = [
-  { id: "ai666-gmail-wholesale", name: "T佬的gmail批发渠道", entry_url: "https://ai666.dnxb.cc/", collection_method: "http", collector_kind: "kami" },
-  { id: "aisou-pro", name: "Aisou智充", entry_url: "https://aisou.pro/", collection_method: "http", collector_kind: "kami" },
-  { id: "caowo-store", name: "GPT专卖-cw", entry_url: "https://caowo.store/", collection_method: "http", collector_kind: "kami" },
-  { id: "fk-gptkt-pro", name: "fk.gptkt.pro", entry_url: "https://fk.gptkt.pro/", collection_method: "http", collector_kind: "kami" },
-  { id: "auto-subscribe", name: "Auto Subscribe", entry_url: "https://shop.auto-subscribe.com/", collection_method: "http", collector_kind: "dujiao" },
-  { id: "opensora-aifk", name: "AUTO FK", entry_url: "https://aifk.opensora.de/", collection_method: "http", collector_kind: "opensoraHtml" },
-  { id: "makerich-club", name: "AI创富俱乐部", entry_url: "https://makerich.club/", collection_method: "http", collector_kind: "makerichHtml" },
-  { id: "ldxp-jinyao", name: "LDXP 金钥", entry_url: "https://pay.ldxp.cn/shop/jinyao", collection_method: "http", collector_kind: "shopApi" },
-  { id: "ldxp-pixelshop", name: "LDXP Pixelshop", entry_url: "https://pay.ldxp.cn/shop/pixelshop", collection_method: "http", collector_kind: "shopApi" },
-  { id: "qxvx-pay", name: "QXVX Pay", entry_url: "https://pay.qxvx.cn/", collection_method: "http", collector_kind: "shopApi" },
-];
 
 export async function runPriceCollection(options = {}) {
   const startedAtMs = Date.now();
   const startedAt = new Date(startedAtMs).toISOString();
   const targets = await loadTargets();
   const selectedTargets = selectTargets(targets, options);
-  if (!selectedTargets.length) {
-    selectedTargets.push(...selectBuiltinTargets(options));
-  }
   const logger = options.silent ? null : console;
   const lockOwner = collectionLockOwner(options);
   const familyState = options.collectionFamilyState || createCollectionFamilyState(options);
@@ -1716,7 +1701,18 @@ async function discoverShopTokens(target, options = {}) {
 }
 
 async function loadTargets() {
-  let sources = BUILTIN_SOURCES;
+  const builtinSources = [
+    { id: "ai666-gmail-wholesale", name: "T佬的gmail批发渠道", entry_url: "https://ai666.dnxb.cc/", collection_method: "http", collector_kind: "kami" },
+    { id: "aisou-pro", name: "Aisou智充", entry_url: "https://aisou.pro/", collection_method: "http", collector_kind: "kami" },
+    { id: "caowo-store", name: "GPT专卖-cw", entry_url: "https://caowo.store/", collection_method: "http", collector_kind: "kami" },
+    { id: "auto-subscribe", name: "Auto Subscribe", entry_url: "https://shop.auto-subscribe.com/", collection_method: "http", collector_kind: "dujiao" },
+    { id: "opensora-aifk", name: "AUTO FK", entry_url: "https://aifk.opensora.de/", collection_method: "http", collector_kind: "opensoraHtml" },
+    { id: "makerich-club", name: "AI创富俱乐部", entry_url: "https://makerich.club/", collection_method: "http", collector_kind: "makerichHtml" },
+    { id: "ldxp-jinyao", name: "LDXP 金钥", entry_url: "https://pay.ldxp.cn/shop/jinyao", collection_method: "http", collector_kind: "shopApi" },
+    { id: "ldxp-pixelshop", name: "LDXP Pixelshop", entry_url: "https://pay.ldxp.cn/shop/pixelshop", collection_method: "http", collector_kind: "shopApi" },
+    { id: "qxvx-pay", name: "QXVX Pay", entry_url: "https://pay.qxvx.cn/", collection_method: "http", collector_kind: "shopApi" },
+  ];
+  let sources = builtinSources;
   let rawOffers = [];
 
   const supabase = getSupabaseClient();
@@ -2359,24 +2355,6 @@ function selectTargets(targets, options) {
   );
 }
 
-function selectBuiltinTargets(options = {}) {
-  const selected = options.source || options.id || options.name;
-  if (!selected || options.all) return [];
-
-  const query = String(selected).toLowerCase();
-  return BUILTIN_SOURCES
-    .map((source) => buildTarget(source, []))
-    .map((target) => ({ ...target, builtinFallback: true }))
-    .filter((target) => target.kind)
-    .filter((target) => matchesTargetKinds(target, options))
-    .filter((target) => !shouldExcludeTarget(target, options))
-    .filter((target) =>
-      [target.sourceId, target.sourceName, target.sourceUrl, target.kind, target.configuredKind]
-        .filter(Boolean)
-        .some((value) => String(value).toLowerCase().includes(query)),
-    );
-}
-
 function targetGroupsForCollection(targets) {
   const groups = new Map();
   for (const target of targets) {
@@ -2881,7 +2859,6 @@ function collectionLockOwner(options = {}) {
 
 async function acquireCollectionLock(target, owner, options = {}) {
   if (truthyFlag(options["no-lock"])) return { acquired: true };
-  if (target.builtinFallback) return { acquired: true };
 
   const supabase = getSupabaseClient();
   if (!supabase) return { acquired: true };

@@ -14,7 +14,7 @@ if (!targetUrl) {
 }
 
 const sourceName = args.name || sourceNameFromUrl(targetUrl);
-const endpoint = args.endpoint || "http://localhost:3000";
+const endpoint = args.endpoint || process.env.CRON_PUBLIC_BASE_URL || "http://localhost:3000";
 const password = args.password || process.env.ADMIN_PASSWORD || process.env.CRON_SECRET || null;
 const browserPath = args.browser || process.env.BROWSER_PATH || findBrowserPath();
 
