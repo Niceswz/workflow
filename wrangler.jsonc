@@ -1,0 +1,5 @@
+{
+  "name": "priceai-crawl-log",
+  "compatibility_date": "2026-06-29",
+  "main": "scripts/crawl-log-worker.mjs"
+}
