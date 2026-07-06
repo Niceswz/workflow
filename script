@@ -179,35 +179,57 @@ export default {
         return jsonResponse({ ok: false, message: "No API key found in request" }, 401);
       }
 
-      // 支持单条或批量
-      const results = Array.isArray(body) ? body : [body];
+      // 支持单条、数组，以及 { runs: [...] } 批量格式（collect-prices.mjs postCrawlLogPayloadBatch）
+      let rawList;
+      if (Array.isArray(body)) {
+        rawList = body;
+      } else if (body && Array.isArray(body.runs)) {
+        rawList = body.runs;
+      } else {
+        rawList = [body];
+      }
+
       let totalSuccess = 0;
       let totalWritten = 0;
 
-      for (const run of results) {
+      for (const run of rawList) {
         const sourceId = run.sourceId || "";
         const sourceName = run.sourceName || "";
+        const sourceUrl = run.sourceUrl || "";
         const offers = run.offers || [];
         const status = run.status || "success";
         const collectedAt = nowISO();
 
-        // 验证 source_id 是否存在，如果不存在则设为 null
-        let validSourceId = null;
+        // ── 步骤 1：确保 sources 表中存在该渠道记录 ──────────────────
+        // crawl_runs.source_id 与 raw_offers.source_id 均有外键约束引用 sources(id)。
+        // 若 sources 表中不存在对应行，upsert 会违反外键约束并抛出错误。
+        // 使用 ignoreDuplicates:true，仅当记录不存在时才插入，避免覆盖已有的完整配置。
         if (sourceId) {
-          const { data: existingSource } = await supabase
+          const { error: sourceError } = await supabase
             .from("sources")
-            .select("id")
-            .eq("id", sourceId)
-            .maybeSingle();
-          validSourceId = existingSource ? sourceId : null;
+            .upsert(
+              {
+                id: sourceId,
+                name: sourceName || sourceId,
+                entry_url: sourceUrl || "",
+                collection_method: "http",
+                health_status: "unknown",
+                created_at: collectedAt,
+                updated_at: collectedAt,
+              },
+              { onConflict: "id", ignoreDuplicates: true },
+            );
+          if (sourceError) {
+            return jsonResponse({ ok: false, message: `Failed to upsert source: ${sourceError.message}` }, 500);
+          }
         }
 
-        // 写入 raw_offers
+        // ── 步骤 2：写入 raw_offers ────────────────────────────────────
         if (offers.length > 0) {
           const rows = offers.map((offer) => ({
             id: offer.id || stableOfferInputId(offer),
-            source_id: validSourceId,
-            source_name: sourceName || sourceId,
+            source_id: sourceId || null,
+            source_name: sourceName,
             source_store_name: offer.sourceStoreName || null,
             source_title: offer.sourceTitle || "",
             price: offer.price ?? null,
@@ -238,14 +260,14 @@ export default {
           totalWritten += offers.length;
         }
 
-        // 写入 crawl_runs
+        // ── 步骤 3：写入 crawl_runs ───────────────────────────────────
         const runId = run.id || ("run-" + nowISO().replace(/[:.]/g, "-") + "-" + Math.random().toString(36).slice(2, 8));
         const { error: runError } = await supabase
           .from("crawl_runs")
           .upsert({
             id: runId,
-            source_id: validSourceId,
-            source_name: sourceName || sourceId,
+            source_id: sourceId || null,
+            source_name: sourceName,
             mode: run.mode || "http",
             status: status,
             started_at: collectedAt,
