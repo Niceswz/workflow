@@ -28,7 +28,9 @@ console.log(`Current branch: ${currentBranch}`);
 console.log(`Deployment ref: ${options.ref}`);
 
 if (existsSync(".vercel/project.json")) {
-  console.log("Warning: local .vercel/project.json exists. Do not use `vercel deploy` for production.");
+  console.error("Error: Vercel project detected. Production must deploy via Cloudflare.");
+  console.error("Remove .vercel/project.json or use a different branch for testing.");
+  process.exit(1);
 }
 
 if (existsSync("vercel.json")) {
