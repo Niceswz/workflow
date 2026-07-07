@@ -195,7 +195,8 @@ export default {
         if (offers.length > 0) {
           const rows = offers.map((offer) => ({
             id: offer.id || stableOfferInputId(offer),
-            source_id: sourceId,
+            // source_id 设为 null 避免外键约束（sources 表中可能没有对应记录）
+            source_id: null,
             source_name: sourceName,
             source_store_name: offer.sourceStoreName || null,
             source_title: offer.sourceTitle || "",
@@ -228,12 +229,13 @@ export default {
         }
 
         // 写入 crawl_runs
+        // 注意：source_id 设为 null 避免外键约束（sources 表中可能没有对应记录）
         const runId = run.id || ("run-" + nowISO().replace(/[:.]/g, "-") + "-" + Math.random().toString(36).slice(2, 8));
         const { error: runError } = await supabase
           .from("crawl_runs")
           .upsert({
             id: runId,
-            source_id: sourceId,
+            source_id: null,
             source_name: sourceName,
             mode: run.mode || "http",
             status: status,
