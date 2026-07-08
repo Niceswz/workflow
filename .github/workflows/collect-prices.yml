@@ -39,6 +39,14 @@ jobs:
             || (echo "❌ Supabase is unreachable" && exit 1)
           echo "✅ Supabase is healthy"
 
+      - name: List available sources
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          echo "=== Listing available sources ==="
+          npm run collect:prices -- --list --exclude-kind dujiao,shopApi || echo "Failed to list sources"
+
       - name: Collect prices in runner
         env:
           COLLECT_PRICES_URL: ${{ secrets.COLLECT_PRICES_URL }}
@@ -63,7 +71,9 @@ jobs:
             exit 1
           fi
 
+          echo "=== Starting price collection ==="
           npm run collect:prices -- --all --post --endpoint "$COLLECT_PRICES_URL" --exclude-kind dujiao,shopApi
+          echo "=== Collection finished ==="
 
       - name: Notify failure
         if: failure()
