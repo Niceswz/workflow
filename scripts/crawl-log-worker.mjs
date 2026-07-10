@@ -191,6 +191,34 @@ export default {
         const status = run.status || "success";
         const collectedAt = nowISO();
 
+        // 更新 sources 表状态
+        if (sourceId) {
+          const isSuccess = status === "success" || status === "partial";
+          try {
+            const { error: sourceError } = await supabase
+              .from("sources")
+              .upsert({
+                id: sourceId,
+                name: sourceName,
+                entry_url: run.sourceUrl || "",
+                collection_method: "http",
+                enabled: true,
+                health_status: isSuccess ? "healthy" : "degraded",
+                last_checked_at: collectedAt,
+                last_success_at: isSuccess ? collectedAt : null,
+                consecutive_failures: isSuccess ? 0 : 1,
+                last_error: isSuccess ? null : (run.message || "采集失败"),
+                updated_at: collectedAt,
+              }, { onConflict: "id" });
+            if (sourceError) {
+              console.error(`Failed to update source ${sourceId}: ${sourceError.message}`);
+            }
+          } catch (e) {
+            // sources 表更新失败不阻塞主流程
+            console.error(`Failed to update source ${sourceId}: ${e.message}`);
+          }
+        }
+
         // 写入 raw_offers
         if (offers.length > 0) {
           const rows = offers.map((offer) => ({
